@@ -13,6 +13,9 @@ ESTAR_CONJUGATIONS = {
     "estaria", "estarias", "estaríamos", "estaríeis", "estariam"
 }
 
+# The % useage of infinitive gerund in the text (a text above this is classified PT-PT, below is classified PT-BR)
+PORTUGAL_BRAZIL_THRESHOLD = 0.11
+
 path = sys.argv[1]
 
 book = epub.read_epub(path)
@@ -63,3 +66,10 @@ print("Other uses of estar:")
 print(nonInfinitives)
 
 print(f"Found {len(infinitives)} instances of estar with infinitive gerund and {len(nonInfinitives)} other uses of 'estar'.")
+portugalyness = len(infinitives) / len(nonInfinitives)
+classification = ""
+if portugalyness >= PORTUGAL_BRAZIL_THRESHOLD:
+    classification = "European"
+else:
+    classification = "Brazilian"
+print(f"This e-book is most likely {classification} Portuguese.")
