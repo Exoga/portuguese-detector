@@ -14,7 +14,7 @@ ESTAR_CONJUGATIONS = {
 }
 
 # The % useage of infinitive gerund in the text (a text above this is classified PT-PT, below is classified PT-BR)
-PORTUGAL_BRAZIL_THRESHOLD = 0.11
+PORTUGAL_BRAZIL_THRESHOLD = 0.8
 
 path = sys.argv[1]
 
