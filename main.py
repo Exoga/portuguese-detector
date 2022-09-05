@@ -67,7 +67,6 @@ print(nonInfinitives)
 
 print(f"Found {len(infinitives)} instances of estar with infinitive gerund and {len(nonInfinitives)} other uses of 'estar'.")
 portugalyness = len(infinitives) / len(nonInfinitives)
-print(f"Percent: {portugalyness}")
 classification = ""
 if portugalyness >= PORTUGAL_BRAZIL_THRESHOLD:
     classification = "European"
